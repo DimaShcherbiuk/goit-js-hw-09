@@ -30,15 +30,14 @@ function handlerSubmit(event) {
   if (email.value.trim() === '' || message.value.trim() === '') {
     alert('Будь ласка, заповніть усі поля форми перед збереженням.');
     return;
-  } else {
-    let data = JSON.parse(value);
-    console.log(
-      `Об'єкт feedback-form-state:\n email: ${data.email} \n message: ${data.message}`
-    );
-
-    email.value = '';
-    message.value = '';
-
-    localStorage.removeItem('feedback-form-state');
   }
+  let data = JSON.parse(localStorage.getItem('feedback-form-state'));
+  console.log(
+    `Об'єкт feedback-form-state:\n email: ${data.email} \n message: ${data.message}`
+  );
+
+  email.value = '';
+  message.value = '';
+
+  localStorage.removeItem('feedback-form-state');
 }
