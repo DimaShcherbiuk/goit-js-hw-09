@@ -70,9 +70,9 @@ const images = [
 
 const listImages = document.querySelector('ul.gallery');
 
-listImages.insertAdjacentHTML('beforeend', createMarkup(images));
+listImages.insertAdjacentHTML('beforeend', createGalleryMarkup(images));
 
-function createMarkup(arr) {
+function createGalleryMarkup(arr) {
   return arr
     .map(
       ({ preview, description, original }) => `<li class="gallery-item">
@@ -90,5 +90,5 @@ function createMarkup(arr) {
 
 new SimpleLightbox('.gallery a', {
   captionsData: 'alt',
-  captionsDelay: 250,
+  captionDelay: 250,
 });
